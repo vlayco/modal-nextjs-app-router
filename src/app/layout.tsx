@@ -1,7 +1,8 @@
+import Link from 'next/link'
 import './globals.css'
-import { Inter } from 'next/font/google'
+import { Outfit } from 'next/font/google'
 
-const inter = Inter({ subsets: ['latin'] })
+const outfit = Outfit({ subsets: ['latin'] })
 
 export const metadata = {
   title: 'Create Next App',
@@ -15,7 +16,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={outfit.className}><nav className='flex flex-row items-center justify-center text-lg text-yellow-600 space-x-4 bg-cyan-950 h-20'>
+          <Link href='/firstpage'>First Page</Link>
+          <Link href='/secondpage'>Second Page</Link>
+        </nav>
+        {children}</body>
     </html>
   )
 }
