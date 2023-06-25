@@ -2,10 +2,11 @@
 
 import React from 'react'
 import Modal from '@/components/Modal';
-import useModal from '@/hooks/useModal';
+import { useModalContext } from '../context/modal-store';
 
 const FirstPage = () => {
-  const {openModal, handleOpenModal} = useModal();
+  const {openModal, handleOpenModal} = useModalContext();
+
   return (
       <main className='flex min-h-screen flex-col items-center justify-around bg-cyan-950'>
         <div className='flex flex-col space-y-3 text-center p-6'>

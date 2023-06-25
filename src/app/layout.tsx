@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import './globals.css'
 import { Outfit } from 'next/font/google'
+import { ModalContextProvider } from './context/modal-store'
 
 const outfit = Outfit({ subsets: ['latin'] })
 
@@ -16,11 +17,16 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={outfit.className}><nav className='flex flex-row items-center justify-center text-lg text-yellow-600 space-x-4 bg-cyan-950 h-20'>
-          <Link href='/firstpage'>First Page</Link>
-          <Link href='/secondpage'>Second Page</Link>
-        </nav>
-        {children}</body>
+      
+      <body className={outfit.className}>
+        <ModalContextProvider>
+          <nav className='flex flex-row items-center justify-center text-lg text-yellow-600 space-x-4 bg-cyan-950 h-20'>
+            <Link href='/firstpage'>First Page</Link>
+            <Link href='/secondpage'>Second Page</Link>
+          </nav>
+              {children}
+        </ModalContextProvider>
+      </body>
     </html>
   )
 }
