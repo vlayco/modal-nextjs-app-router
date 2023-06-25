@@ -18,7 +18,7 @@ const FirstPage = () => {
   
           <button className='text-yellow-600 text-xl hover:bg-yellow-600 hover:text-emerald-950 transition-colors border rounded-md px-3 py-1.5 border-yellow-600' onClick={handleOpenModal}>Open</button>
         </div>
-        <Modal visible={openModal} onClose={handleOpenModal}>
+        <Modal visible={openModal} close={handleOpenModal}>
           <p className='text-5xl'>This is a modal component</p>
         </Modal>
       </main>
